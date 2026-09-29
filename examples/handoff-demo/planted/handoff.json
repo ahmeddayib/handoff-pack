@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "toolVersion": "0.1.0",
+  "generatedAt": "2026-09-28T21:02:17.335Z",
+  "repo": {
+    "path": "/Users/ahmeddayib/Downloads/handoff-demo",
+    "commitSha": "5549ae7e87513c58a588b3c880ea6e7d30f3e9db",
+    "branch": "main"
+  },
+  "vercel": {
+    "projectId": "prj_Fvkwy98ubTkudoURXslaXb4pVKMW",
+    "projectName": "handoff-demo",
+    "teamId": "team_wPjf4xesNCg7x2jRb1M21tlS",
+    "accessed": true,
+    "plan": "hobby"
+  },
+  "coverage": {
+    "verified": 4,
+    "mismatch": 2,
+    "unverified": 2
+  },
+  "envVars": [
+    {
+      "name": "PLANTED_MISSING_VAR",
+      "references": [
+        {
+          "file": "app/api/generate/route.ts",
+          "line": 8
+        }
+      ],
+      "declaredIn": [],
+      "clientExposed": false,
+      "status": "MISMATCH"
+    },
+    {
+      "name": "PLANTED_ORPHAN_VAR",
+      "references": [],
+      "declaredIn": [],
+      "clientExposed": false,
+      "vercelTargets": [
+        "production"
+      ],
+      "vercelType": "sensitive",
+      "status": "VERIFIED"
+    },
+    {
+      "name": "RESEND_API_KEY",
+      "references": [
+        {
+          "file": "app/api/generate/request-rsvp.ts",
+          "line": 13
+        },
+        {
+          "file": "app/api/generate/send-recipient-email.ts",
+          "line": 18
+        }
+      ],
+      "declaredIn": [
+        ".env.example"
+      ],
+      "clientExposed": false,
+      "vercelTargets": [
+        "preview",
+        "production"
+      ],
+      "vercelType": "sensitive",
+      "service": "Resend",
+      "status": "VERIFIED"
+    }
+  ],
+  "omittedSystemEnvVars": [
+    "VERCEL_OIDC_TOKEN"
+  ],
+  "models": [
+    {
+      "provider": "google",
+      "modelId": "gemini-2.5-flash-image-preview",
+      "rawExpression": "'google/gemini-2.5-flash-image-preview'",
+      "callKind": "generateText",
+      "location": {
+        "file": "app/api/generate/generate-image.ts",
+        "line": 15
+      }
+    },
+    {
+      "provider": "openai",
+      "modelId": "gpt-5-2025-08-07",
+      "rawExpression": "'openai/gpt-5-2025-08-07'",
+      "callKind": "generateText",
+      "location": {
+        "file": "app/api/generate/generate-message.ts",
+        "line": 15
+      }
+    },
+    {
+      "provider": "google",
+      "modelId": "gemini-3.1-flash-lite-preview",
+      "rawExpression": "'google/gemini-3.1-flash-lite-preview'",
+      "callKind": "generateObject",
+      "location": {
+        "file": "app/api/generate/generate-prompts.ts",
+        "line": 16
+      }
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/no-secret",
+      "schedule": "0 10 * * *",
+      "humanSchedule": "At 10:00 AM (UTC)",
+      "routeFile": "app/api/cron/no-secret/route.ts",
+      "hasGetHandler": true,
+      "liveOnVercel": true,
+      "status": "VERIFIED"
+    },
+    {
+      "path": "/api/cron/planted-missing-route",
+      "schedule": "0 9 * * *",
+      "humanSchedule": "At 09:00 AM (UTC)",
+      "liveOnVercel": true,
+      "status": "MISMATCH"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "generateBirthdayCard",
+      "location": {
+        "file": "app/api/generate/generate-birthday-card.ts",
+        "line": 9
+      },
+      "steps": [
+        {
+          "name": "generatePrompts",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 21
+          },
+          "callCount": 1
+        },
+        {
+          "name": "generateImage",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 26
+          },
+          "callCount": 1
+        },
+        {
+          "name": "generateMessage",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 27
+          },
+          "callCount": 1
+        },
+        {
+          "name": "writeProgressEvent",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 31
+          },
+          "callCount": 8
+        },
+        {
+          "name": "requestRsvp",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 45
+          },
+          "callCount": 1
+        },
+        {
+          "name": "sendRecipientEmail",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 120
+          },
+          "callCount": 1
+        },
+        {
+          "name": "closeProgressStream",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 149
+          },
+          "callCount": 1
+        }
+      ],
+      "sleeps": [
+        {
+          "duration": null,
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 109
+          }
+        }
+      ],
+      "hooks": [
+        {
+          "kind": "createWebhook",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 41
+          }
+        }
+      ],
+      "startedFrom": [
+        {
+          "file": "app/api/generate/route.ts",
+          "line": 41
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "service": "Resend",
+      "category": "email",
+      "envVars": [
+        "RESEND_API_KEY"
+      ],
+      "packages": [
+        "resend"
+      ]
+    }
+  ],
+  "ownership": [
+    {
+      "key": "domain:handoff-demo-sigma.vercel.app",
+      "item": "Domain handoff-demo-sigma.vercel.app",
+      "owner": "unknown",
+      "action": "Vercel-provided domain; the client will likely add their own custom domain."
+    },
+    {
+      "key": "git-repository",
+      "item": "Git repository github.com/ahmeddayib/handoff-demo",
+      "owner": "unknown",
+      "action": "Transfer the repository to the client's organization or grant admin access."
+    },
+    {
+      "key": "service:Resend",
+      "item": "Resend credentials (RESEND_API_KEY)",
+      "owner": "unknown",
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "key": "vercel-team",
+      "item": "Vercel project handoff-demo in team ahmeddayib's projects",
+      "owner": "unknown",
+      "action": "Transfer the project to the client's team or confirm the client will own this team."
+    },
+    {
+      "key": "workflow-webhook-domain",
+      "item": "Workflow webhook URLs",
+      "owner": "unknown",
+      "action": "Pending runs hold webhook URLs on the current domain; changing the production domain may break runs waiting on these webhooks."
+    },
+    {
+      "key": "workflows",
+      "item": "Durable workflows",
+      "owner": "unknown",
+      "action": "In-flight runs will continue after handoff and use credentials configured at resume time; plan credential rotation deliberately."
+    }
+  ],
+  "findings": [
+    {
+      "id": "cron:/api/cron/no-secret:secret",
+      "rule": null,
+      "subject": "/api/cron/no-secret",
+      "category": "cron",
+      "title": "Cron endpoint does not check CRON_SECRET; it can be triggered by anyone.",
+      "severity": "MEDIUM",
+      "verification": "NOT_APPLICABLE",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "No CRON_SECRET reference in app/api/cron/no-secret/route.ts"
+        }
+      ],
+      "action": "Check CRON_SECRET in the cron route before performing work."
+    },
+    {
+      "id": "cron:/api/cron/planted-missing-route:route",
+      "rule": "V7",
+      "subject": "/api/cron/planted-missing-route",
+      "category": "cron",
+      "title": "Cron route or GET handler missing",
+      "severity": "CRITICAL",
+      "verification": "MISMATCH",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "No matching route file"
+        }
+      ],
+      "action": "Add a matching cron route with a GET handler, or remove this cron entry."
+    },
+    {
+      "id": "env:PLANTED_MISSING_VAR:missing-production",
+      "rule": "V1",
+      "subject": "PLANTED_MISSING_VAR",
+      "category": "env",
+      "title": "Environment variable missing from Vercel production",
+      "severity": "CRITICAL",
+      "verification": "MISMATCH",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Referenced in production code",
+          "location": {
+            "file": "app/api/generate/route.ts",
+            "line": 8
+          }
+        },
+        {
+          "source": "vercel",
+          "detail": "Not found in production target"
+        }
+      ],
+      "action": "Add PLANTED_MISSING_VAR to the Vercel production environment."
+    },
+    {
+      "id": "env:PLANTED_ORPHAN_VAR:orphan",
+      "rule": "V3",
+      "subject": "PLANTED_ORPHAN_VAR",
+      "category": "env",
+      "title": "Possibly orphaned Vercel environment variable",
+      "severity": "INFO",
+      "verification": "VERIFIED",
+      "evidence": [
+        {
+          "source": "vercel",
+          "detail": "Present for production target; no repository reference found"
+        }
+      ],
+      "action": "Confirm whether PLANTED_ORPHAN_VAR is still needed before removing it."
+    },
+    {
+      "id": "model:google/gemini-2.5-flash-image-preview:app/api/generate/generate-image.ts:15",
+      "rule": "V13",
+      "subject": "gemini-2.5-flash-image-preview",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model call at app/api/generate/generate-image.ts:15",
+          "location": {
+            "file": "app/api/generate/generate-image.ts",
+            "line": 15
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:google/gemini-3.1-flash-lite-preview:app/api/generate/generate-prompts.ts:16",
+      "rule": "V13",
+      "subject": "gemini-3.1-flash-lite-preview",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model call at app/api/generate/generate-prompts.ts:16",
+          "location": {
+            "file": "app/api/generate/generate-prompts.ts",
+            "line": 16
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:openai/gpt-5-2025-08-07:app/api/generate/generate-message.ts:15",
+      "rule": "V10",
+      "subject": "gpt-5-2025-08-07",
+      "category": "model",
+      "title": "Model retires on 2026-12-11",
+      "severity": "HIGH",
+      "verification": "VERIFIED",
+      "evidence": [
+        {
+          "source": "registry",
+          "detail": "deprecated in bundled registry; source: https://raw.githubusercontent.com/techdevsynergy/llm-deprecation-data/main/llm_deprecation_data.json"
+        },
+        {
+          "source": "repo",
+          "detail": "Model call at app/api/generate/generate-message.ts:15",
+          "location": {
+            "file": "app/api/generate/generate-message.ts",
+            "line": 15
+          }
+        }
+      ],
+      "action": "Replace gpt-5-2025-08-07 with gpt-5.6-sol before 2026-12-11."
+    },
+    {
+      "id": "ownership:domain:handoff-demo-sigma.vercel.app",
+      "rule": null,
+      "subject": "Domain handoff-demo-sigma.vercel.app",
+      "category": "ownership",
+      "title": "Ownership: Domain handoff-demo-sigma.vercel.app",
+      "severity": "INFO",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Vercel-provided domain; the client will likely add their own custom domain."
+    },
+    {
+      "id": "ownership:git-repository",
+      "rule": null,
+      "subject": "Git repository github.com/ahmeddayib/handoff-demo",
+      "category": "ownership",
+      "title": "Ownership: Git repository github.com/ahmeddayib/handoff-demo",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Transfer the repository to the client's organization or grant admin access."
+    },
+    {
+      "id": "ownership:service:Resend",
+      "rule": null,
+      "subject": "Resend credentials (RESEND_API_KEY)",
+      "category": "ownership",
+      "title": "Ownership: Resend credentials (RESEND_API_KEY)",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "id": "ownership:vercel-team",
+      "rule": null,
+      "subject": "Vercel project handoff-demo in team ahmeddayib's projects",
+      "category": "ownership",
+      "title": "Ownership: Vercel project handoff-demo in team ahmeddayib's projects",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Transfer the project to the client's team or confirm the client will own this team."
+    },
+    {
+      "id": "ownership:workflow-webhook-domain",
+      "rule": null,
+      "subject": "Workflow webhook URLs",
+      "category": "ownership",
+      "title": "Ownership: Workflow webhook URLs",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Pending runs hold webhook URLs on the current domain; changing the production domain may break runs waiting on these webhooks."
+    },
+    {
+      "id": "ownership:workflows",
+      "rule": null,
+      "subject": "Durable workflows",
+      "category": "ownership",
+      "title": "Ownership: Durable workflows",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "In-flight runs will continue after handoff and use credentials configured at resume time; plan credential rotation deliberately."
+    },
+    {
+      "id": "protection:production-commit",
+      "rule": "V17",
+      "subject": "production-commit",
+      "category": "protection",
+      "title": "Report describes a commit that is not in production",
+      "severity": "MEDIUM",
+      "verification": "MISMATCH",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Scanned commit 5549ae7e87513c58a588b3c880ea6e7d30f3e9db"
+        },
+        {
+          "source": "vercel",
+          "detail": "Production commit dd2eeb8dd5dfd59659189dc27667900901a18a84"
+        }
+      ],
+      "action": "Deploy the scanned commit or regenerate this report from the production commit."
+    },
+    {
+      "id": "protection:production-disabled",
+      "rule": "V15",
+      "subject": "production-deployment",
+      "category": "protection",
+      "title": "Production deployment protection is disabled",
+      "severity": "INFO",
+      "verification": "VERIFIED",
+      "evidence": [
+        {
+          "source": "vercel",
+          "detail": "Project password, SSO, and trusted IP protection are disabled for production."
+        }
+      ],
+      "action": "Confirm that public access to production is intentional."
+    },
+    {
+      "id": "workflow:app/api/generate/generate-birthday-card.ts:generateBirthdayCard:paused",
+      "rule": null,
+      "subject": "generateBirthdayCard",
+      "category": "workflow",
+      "title": "This workflow can be paused for long periods. Runs in progress at handoff will continue after the handoff.",
+      "severity": "INFO",
+      "verification": "NOT_APPLICABLE",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Long sleep or hook in workflow",
+          "location": {
+            "file": "app/api/generate/generate-birthday-card.ts",
+            "line": 9
+          }
+        }
+      ],
+      "action": "Review in-flight runs and their credentials during handoff."
+    }
+  ],
+  "limits": [
+    "Actual spend not read; if the project uses Vercel AI Gateway, check its usage dashboard."
+  ]
+}

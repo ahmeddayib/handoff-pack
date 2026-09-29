@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>handoff-demo terminal recording</title>
+    <style>
+      body {
+        margin: 24px;
+        font: 16px system-ui;
+        background: #10141b;
+        color: #e9eef5;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      input {
+        flex: 1;
+      }
+      button {
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+      pre {
+        padding: 20px;
+        background: #05080d;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font: 13px/1.5 monospace;
+        min-height: 580px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>handoff-demo terminal recording</h1>
+    <nav>
+      <button id="play">Play</button><button id="restart">Restart</button
+      ><input
+        id="seek"
+        type="range"
+        min="0"
+        max="65"
+        step="0.1"
+        value="0"
+        aria-label="Recording time"
+      /><span id="time">0 / 65 s</span>
+    </nav>
+    <pre id="screen" aria-live="off"></pre>
+    <script>
+      const recording = {
+        header: {
+          version: 2,
+          width: 140,
+          height: 45,
+          timestamp: 1790541735,
+          title: "handoff-demo: live clean scan and saved planted findings",
+          duration: 65,
+        },
+        events: [
+          [
+            0.00035929099999999894,
+            "o",
+            "$ node dist/cli.js generate --repo handoff-demo --vercel-project handoff-demo --verbose\r\n",
+          ],
+          [
+            2.6238987910000002,
+            "o",
+            "Wrote report for /Users/ahmeddayib/Downloads/handoff-demo\r\nFindings: 12; coverage: 1 verified, 0 mismatched, 3 unverified; limits: 2.\r\n",
+          ],
+          [
+            12.000731791,
+            "o",
+            "\u001b[2J\u001b[HLIVE CLEAN REPORT\r\n\r\n## 1. Action items\r\n\r\nNo critical or high-severity items.\r\n\r\n## 2. Ownership transfer checklist\r\n\r\n|  | Item | Owner | Action |\r\n| --- | --- | --- | --- |\r\n| - [ ] | Domain handoff-demo-sigma.vercel.app | unknown | Confirm the client controls the registrar and DNS. |\r\n| - [ ] | Git repository github.com/ahmeddayib/handoff-demo | unknown | Transfer the repository to the client's organization or grant admin access. |\r\n| - [ ] | Resend credentials (RESEND_API_KEY) | unknown | Confirm the account belongs to the client. After transfer, rotate the keys. |\r\n| - [ ] | Vercel project handoff-demo in team ahmeddayib's projects | unknown | Transfer the project to the client's team or confirm the client will own this team. |\r\n| - [ ] | Workflow webhook detected: generateBirthdayCard | unknown | Re-register this webhook URL in the provider under the client's account and the client's production domain. |\r\n| - [ ] | Durable workflows | unknown | In-flight runs will continue after handoff and use credentials configured at resume time; plan credential rotation deliberately. |\r\n\r\n## 3. Environment variables\r\n\r\n| Name | Service | Used in | Vercel targets | Type | Client-exposed | Status |\r\n| --- | --- | --- | --- | --- | --- | --- |\r\n| RESEND_API_KEY | Resend | app/api/generate/request-rsvp.ts:13, app/api/generate/send-recipient-email.ts:18 | preview, production | sensitive | No | ✅ Verified |\r\n\r\nOmitted (managed by Vercel): VERCEL_OIDC_TOKEN.\r\n\r\n",
+          ],
+          [
+            28.002742416,
+            "o",
+            "\u001b[2J\u001b[HSAVED PLANTED REPORT: known issues on the same demo project\r\n\r\n## 1. Action items\r\n\r\n- **CRITICAL · ❌ Mismatch:** Cron route or GET handler missing (/api/cron/planted-missing-route). Add a matching cron route with a GET handler, or remove this cron entry.\r\n- **CRITICAL · ❌ Mismatch:** Environment variable missing from Vercel production (PLANTED_MISSING_VAR). Add PLANTED_MISSING_VAR to the Vercel production environment.\r\n- **HIGH · ✅ Verified:** Model retires on 2026-12-11 (gpt-5-2025-08-07). Replace gpt-5-2025-08-07 with gpt-5.6-sol before 2026-12-11.\r\n\r\n",
+          ],
+          [
+            28.002802791,
+            "o",
+            "## 3. Environment variables\r\n\r\n| Name | Service | Used in | Vercel targets | Type | Client-exposed | Status |\r\n| --- | --- | --- | --- | --- | --- | --- |\r\n| PLANTED_MISSING_VAR | — | app/api/generate/route.ts:8 | — | — | No | ❌ Mismatch |\r\n| PLANTED_ORPHAN_VAR | — | — | production | sensitive | No | ✅ Verified |\r\n| RESEND_API_KEY | Resend | app/api/generate/request-rsvp.ts:13, app/api/generate/send-recipient-email.ts:18 | preview, production | sensitive | No | ✅ Verified |\r\n\r\nOmitted (managed by Vercel): VERCEL_OIDC_TOKEN.\r\n\r\n## 4. Scheduled jobs (crons)\r\n\r\n| Path | Schedule | Runs | Route file | Checks CRON_SECRET | Live on Vercel | Status | Notes |\r\n| --- | --- | --- | --- | --- | --- | --- | --- |\r\n| /api/cron/no-secret | 0 10 * * * | At 10:00 AM (UTC) | app/api/cron/no-secret/route.ts | No | Yes | ✅ Verified | — |\r\n| /api/cron/planted-missing-route | 0 9 * * * | At 09:00 AM (UTC) | — | — | Yes | ❌ Mismatch | Scheduled on Vercel, but the route file doesn't exist; every run will 404. |\r\n\r\nHobby plan timing: cron jobs may run up to 59 minutes after the scheduled time. [Vercel cron timing](https://vercel.com/docs/cron-jobs/usage-and-pricing).\r\n\r\n",
+          ],
+          [
+            44.00131325,
+            "o",
+            "\u001b[2J\u001b[HSAVED PLANTED REPORT: account handoff and model dependencies\r\n\r\n## 2. Ownership transfer checklist\r\n\r\n|  | Item | Owner | Action |\r\n| --- | --- | --- | --- |\r\n| - [ ] | Domain handoff-demo-sigma.vercel.app | unknown | Confirm the client controls the registrar and DNS. |\r\n| - [ ] | Git repository github.com/ahmeddayib/handoff-demo | unknown | Transfer the repository to the client's organization or grant admin access. |\r\n| - [ ] | Resend credentials (RESEND_API_KEY) | unknown | Confirm the account belongs to the client. After transfer, rotate the keys. |\r\n| - [ ] | Vercel project handoff-demo in team ahmeddayib's projects | unknown | Transfer the project to the client's team or confirm the client will own this team. |\r\n| - [ ] | Workflow webhook detected: generateBirthdayCard | unknown | Re-register this webhook URL in the provider under the client's account and the client's production domain. |\r\n| - [ ] | Durable workflows | unknown | In-flight runs will continue after handoff and use credentials configured at resume time; plan credential rotation deliberately. |\r\n\r\n",
+          ],
+          [
+            44.001332458,
+            "o",
+            "## 6. Model dependencies\r\n\r\nAssumptions: 1000 input tokens and 500 output tokens per request; estimates are per 1,000 requests.\r\n\r\n| Provider | Model | Call sites | Status | Retires | Replacement | Est. cost / 1k requests |\r\n| --- | --- | --- | --- | --- | --- | --- |\r\n| google | gemini-2.5-flash-image-preview | app/api/generate/generate-image.ts:15 | ⚠️ Unverified | — | — | price unknown |\r\n| openai | gpt-5-2025-08-07 | app/api/generate/generate-message.ts:15 | ✅ Verified | 2026-12-11 | gpt-5.6-sol | price unknown |\r\n| google | gemini-3.1-flash-lite-preview | app/api/generate/generate-prompts.ts:16 | ⚠️ Unverified | — | — | price unknown |\r\n\r\nMonthly estimate ≈ (requests per month ÷ 1,000) × cost per 1,000.\r\n\r\n",
+          ],
+          [
+            56.001566125,
+            "o",
+            "\u001b[2J\u001b[H$ pnpm acceptance -- --report \u003cfresh-live-report> --expected test/acceptance/expected/handoff-demo.clean.json\r\n\r\n",
+          ],
+          [
+            56.432267833,
+            "o",
+            "\r\n> handoff-pack@0.1.0 acceptance /Users/ahmeddayib/Downloads/handoff\r\n> tsx test/acceptance/score.ts -- --report /var/folders/mx/c2gywq393qdbcjb9pbt_3n1c0000gn/T/handoff-demo-recording-n7CvDy/handoff.json --expected test/acceptance/expected/handoff-demo.clean.json\r\n\r\n# Acceptance: handoff-demo\r\n\r\n- Caught: 0 / 0\r\n- Missed: 0\r\n- False positives: 0\r\n- Unexpected HIGH+: 0\r\n- False verifications: 0\r\n- Result: PASS\r\n",
+          ],
+          [65.00075975, "o", "\r\nEnd of terminal recording.\r\n"],
+        ],
+      };
+      const screen = document.getElementById("screen");
+      const seek = document.getElementById("seek");
+      const button = document.getElementById("play");
+      const clock = document.getElementById("time");
+      let current = 0,
+        running = false,
+        previous = 0;
+      function render() {
+        let text = "";
+        for (const event of recording.events) {
+          if (event[0] > current) break;
+          if (event[1] !== "o") continue;
+          const chunks = event[2].split("\u001b[2J\u001b[H");
+          if (chunks.length > 1) text = chunks.at(-1);
+          else text += chunks[0];
+        }
+        screen.textContent = text.replaceAll("\r", "");
+        seek.value = current;
+        clock.textContent =
+          Math.floor(current) + " / " + recording.header.duration + " s";
+        button.textContent = running ? "Pause" : "Play";
+      }
+      function frame(now) {
+        if (running) {
+          current = Math.min(
+            recording.header.duration,
+            current + (now - previous) / 1000,
+          );
+          if (current === recording.header.duration) running = false;
+          render();
+        }
+        previous = now;
+        requestAnimationFrame(frame);
+      }
+      button.onclick = () => {
+        if (current === recording.header.duration) current = 0;
+        running = !running;
+        render();
+      };
+      document.getElementById("restart").onclick = () => {
+        current = 0;
+        running = false;
+        render();
+      };
+      seek.oninput = () => {
+        current = Number(seek.value);
+        render();
+      };
+      render();
+      requestAnimationFrame(frame);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+node_modules
+dist
+handoff
+examples
+pnpm-lock.yaml
+SPEC.md
+test/fixtures

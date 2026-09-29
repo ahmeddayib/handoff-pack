@@ -1,0 +1,98 @@
+[
+  {
+    "service": "OpenAI",
+    "envPatterns": ["^OPENAI_"],
+    "packages": ["openai", "@ai-sdk/openai"],
+    "category": "llm"
+  },
+  {
+    "service": "Anthropic",
+    "envPatterns": ["^ANTHROPIC_"],
+    "packages": ["@anthropic-ai/sdk", "@ai-sdk/anthropic"],
+    "category": "llm"
+  },
+  {
+    "service": "Google AI",
+    "envPatterns": ["^GOOGLE_GENERATIVE_AI_"],
+    "packages": ["@ai-sdk/google"],
+    "category": "llm"
+  },
+  {
+    "service": "Vercel AI Gateway",
+    "envPatterns": ["^AI_GATEWAY_"],
+    "packages": ["@ai-sdk/gateway"],
+    "category": "llm"
+  },
+  {
+    "service": "Postgres",
+    "envPatterns": ["^DATABASE_URL$", "^POSTGRES_"],
+    "packages": [
+      "pg",
+      "postgres",
+      "@neondatabase/serverless",
+      "drizzle-orm",
+      "@prisma/client"
+    ],
+    "category": "database"
+  },
+  {
+    "service": "Supabase",
+    "envPatterns": ["^SUPABASE_", "^NEXT_PUBLIC_SUPABASE_"],
+    "packages": ["@supabase/supabase-js"],
+    "category": "database"
+  },
+  {
+    "service": "Redis/KV",
+    "envPatterns": ["^KV_", "^UPSTASH_REDIS_", "^REDIS_URL$"],
+    "packages": ["@upstash/redis", "@vercel/kv", "redis", "ioredis"],
+    "category": "database"
+  },
+  {
+    "service": "Vercel Blob",
+    "envPatterns": ["^BLOB_READ_WRITE_TOKEN$"],
+    "packages": ["@vercel/blob"],
+    "category": "storage"
+  },
+  {
+    "service": "Stripe",
+    "envPatterns": ["^STRIPE_"],
+    "packages": ["stripe"],
+    "category": "payments"
+  },
+  {
+    "service": "Resend",
+    "envPatterns": ["^RESEND_"],
+    "packages": ["resend"],
+    "category": "email"
+  },
+  {
+    "service": "Slack",
+    "envPatterns": ["^SLACK_"],
+    "packages": ["@slack/web-api", "@slack/bolt"],
+    "category": "messaging"
+  },
+  {
+    "service": "Clerk",
+    "envPatterns": ["^CLERK_", "^NEXT_PUBLIC_CLERK_"],
+    "packages": ["@clerk/nextjs"],
+    "category": "auth"
+  },
+  {
+    "service": "Auth.js",
+    "envPatterns": ["^AUTH_", "^NEXTAUTH_"],
+    "packages": ["next-auth", "@auth/core"],
+    "category": "auth"
+  },
+  {
+    "service": "Sentry",
+    "envPatterns": ["^SENTRY_", "^NEXT_PUBLIC_SENTRY_"],
+    "packages": ["@sentry/nextjs"],
+    "category": "observability"
+  },
+  {
+    "service": "Langfuse",
+    "envPatterns": ["^LANGFUSE_"],
+    "packages": ["langfuse", "langfuse-vercel"],
+    "category": "observability"
+  }
+]

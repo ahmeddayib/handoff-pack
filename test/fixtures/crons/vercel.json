@@ -1,0 +1,1 @@
+{"crons":[{"path":"/api/cron/secured?source=vercel","schedule":"0 5 * * *"},{"path":"/api/cron/open","schedule":"*/15 * * * *"},{"path":"/api/cron/missing","schedule":"0 0 * * 1"}]}

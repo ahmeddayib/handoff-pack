@@ -1,0 +1,26 @@
+{
+  "project": "handoff-demo",
+  "mustFind": [],
+  "mustNotFind": [
+    { "rule": "V1", "subject": "PLANTED_MISSING_VAR", "severity": "CRITICAL" },
+    { "rule": "V3", "subject": "PLANTED_ORPHAN_VAR" },
+    {
+      "rule": "V7",
+      "subject": "/api/cron/planted-missing-route",
+      "severity": "CRITICAL"
+    },
+    {
+      "rule": null,
+      "category": "cron",
+      "subject": "/api/cron/no-secret",
+      "titleIncludes": "CRON_SECRET"
+    },
+    { "rule": "V10", "subject": "gpt-5-2025-08-07" },
+    { "rule": "V17", "subject": "production-commit" },
+    { "rule": "V1", "subject": "RESEND_API_KEY" }
+  ],
+  "verifiedRows": {
+    "envVars": ["RESEND_API_KEY"],
+    "crons": []
+  }
+}

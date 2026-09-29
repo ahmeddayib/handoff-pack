@@ -1,0 +1,54 @@
+{
+  "name": "handoff-pack",
+  "version": "0.1.0",
+  "description": "Operating runbook generator for AI apps on Vercel",
+  "type": "module",
+  "bin": {
+    "handoff-pack": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc && pnpm build:action",
+    "build:action": "node scripts/build-action.mjs",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "demo": "node scripts/record-demo.mjs && node scripts/render-demo.mjs",
+    "acceptance": "tsx test/acceptance/score.ts",
+    "failure-modes": "pnpm build && tsx test/acceptance/failureModes.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@vercel/sdk": "^1.28.36",
+    "commander": "^14.0.1",
+    "cronstrue": "^3.27.0",
+    "minimatch": "^10.2.6",
+    "ts-morph": "^28.0.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@ai-sdk/amazon-bedrock": "^5.0.94",
+    "@ai-sdk/anthropic": "^4.0.63",
+    "@ai-sdk/azure": "^4.0.79",
+    "@ai-sdk/gateway": "^4.0.92",
+    "@ai-sdk/google": "^4.0.80",
+    "@ai-sdk/groq": "^4.0.48",
+    "@ai-sdk/mistral": "^4.0.50",
+    "@ai-sdk/openai": "^4.0.75",
+    "@ai-sdk/xai": "^5.0.8",
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^24.5.2",
+    "ai": "^7.0.114",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.36.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
+    "vitest": "^3.2.4",
+    "workflow": "^4.8.9"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "OpenAI": "https://status.openai.com/",
+  "Anthropic": "https://status.claude.com/",
+  "Vercel AI Gateway": "https://www.vercel-status.com/",
+  "Vercel": "https://www.vercel-status.com/",
+  "Stripe": "https://status.stripe.com/",
+  "Supabase": "https://status.supabase.com/"
+}

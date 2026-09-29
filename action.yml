@@ -1,0 +1,26 @@
+name: handoff-pack
+description: Generate a Vercel AI app operating runbook and optionally open a pull request and model deprecation issues.
+inputs:
+  vercel-token:
+    description: Vercel API token for live verification.
+    required: false
+  vercel-project:
+    description: Vercel project ID or name.
+    required: false
+  vercel-team:
+    description: Vercel team ID.
+    required: false
+  mode:
+    description: report, pr, or issue.
+    default: pr
+  deprecation-window-days:
+    description: Days before retirement to flag a model.
+    default: "90"
+outputs:
+  changed:
+    description: Whether the runbook differs from the committed report.
+  pull-request-url:
+    description: The created or updated pull request URL.
+runs:
+  using: node20
+  main: dist/action-bundle/index.js

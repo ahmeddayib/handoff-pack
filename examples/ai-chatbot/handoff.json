@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 1,
+  "toolVersion": "0.1.0",
+  "generatedAt": "2026-09-28T20:26:37.459Z",
+  "repo": {
+    "path": "/Users/ahmeddayib/Downloads/ai-chatbot",
+    "commitSha": "c2f8235e1f3ea903ad8b7f61447c4f74164b5c58",
+    "branch": "main"
+  },
+  "vercel": {
+    "projectId": null,
+    "projectName": null,
+    "teamId": null,
+    "accessed": false
+  },
+  "coverage": {
+    "verified": 2,
+    "mismatch": 0,
+    "unverified": 17
+  },
+  "envVars": [
+    {
+      "name": "AI_GATEWAY_API_KEY",
+      "references": [],
+      "declaredIn": [
+        ".env.example"
+      ],
+      "clientExposed": false,
+      "service": "Vercel AI Gateway",
+      "implicitReader": "ai",
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "AUTH_SECRET",
+      "references": [
+        {
+          "file": "app/(auth)/api/auth/guest/route.ts",
+          "line": 16
+        },
+        {
+          "file": "proxy.ts",
+          "line": 18
+        }
+      ],
+      "declaredIn": [
+        ".env.example"
+      ],
+      "clientExposed": false,
+      "service": "Auth.js",
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "BLOB_READ_WRITE_TOKEN",
+      "references": [],
+      "declaredIn": [
+        ".env.example"
+      ],
+      "clientExposed": false,
+      "service": "Vercel Blob",
+      "implicitReader": "@vercel/blob",
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "CI_PLAYWRIGHT",
+      "references": [
+        {
+          "file": "lib/constants.ts",
+          "line": 8
+        }
+      ],
+      "declaredIn": [],
+      "clientExposed": false,
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "IS_DEMO",
+      "references": [
+        {
+          "file": "lib/ai/models.ts",
+          "line": 109
+        },
+        {
+          "file": "next.config.ts",
+          "line": 4
+        }
+      ],
+      "declaredIn": [],
+      "clientExposed": false,
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "NEXT_PUBLIC_BASE_PATH",
+      "references": [
+        {
+          "file": "app/(auth)/api/auth/guest/route.ts",
+          "line": 21
+        },
+        {
+          "file": "app/(auth)/auth.config.ts",
+          "line": 3
+        },
+        {
+          "file": "app/layout.tsx",
+          "line": 78
+        },
+        {
+          "file": "components/chat/app-sidebar.tsx",
+          "line": 77
+        },
+        {
+          "file": "components/chat/artifact.tsx",
+          "line": 98
+        },
+        {
+          "file": "components/chat/artifact.tsx",
+          "line": 157
+        },
+        {
+          "file": "components/chat/artifact.tsx",
+          "line": 176
+        },
+        {
+          "file": "components/chat/document-preview.tsx",
+          "line": 54
+        },
+        {
+          "file": "components/chat/message-actions.tsx",
+          "line": 48
+        },
+        {
+          "file": "components/chat/message-actions.tsx",
+          "line": 64
+        },
+        {
+          "file": "components/chat/message-actions.tsx",
+          "line": 93
+        },
+        {
+          "file": "components/chat/message-actions.tsx",
+          "line": 109
+        },
+        {
+          "file": "components/chat/multimodal-input.tsx",
+          "line": 196
+        },
+        {
+          "file": "components/chat/multimodal-input.tsx",
+          "line": 211
+        },
+        {
+          "file": "components/chat/multimodal-input.tsx",
+          "line": 233
+        },
+        {
+          "file": "components/chat/multimodal-input.tsx",
+          "line": 276
+        },
+        {
+          "file": "components/chat/multimodal-input.tsx",
+          "line": 648
+        },
+        {
+          "file": "components/chat/multimodal-input.tsx",
+          "line": 795
+        },
+        {
+          "file": "components/chat/shell.tsx",
+          "line": 110
+        },
+        {
+          "file": "components/chat/sidebar-history.tsx",
+          "line": 89
+        },
+        {
+          "file": "components/chat/sidebar-history.tsx",
+          "line": 98
+        },
+        {
+          "file": "components/chat/sidebar-history.tsx",
+          "line": 150
+        },
+        {
+          "file": "components/chat/suggested-actions.tsx",
+          "line": 24
+        },
+        {
+          "file": "components/chat/version-footer.tsx",
+          "line": 59
+        },
+        {
+          "file": "components/chat/version-footer.tsx",
+          "line": 61
+        },
+        {
+          "file": "hooks/use-active-chat.tsx",
+          "line": 88
+        },
+        {
+          "file": "hooks/use-active-chat.tsx",
+          "line": 148
+        },
+        {
+          "file": "hooks/use-active-chat.tsx",
+          "line": 231
+        },
+        {
+          "file": "hooks/use-active-chat.tsx",
+          "line": 251
+        },
+        {
+          "file": "hooks/use-chat-visibility.ts",
+          "line": 22
+        },
+        {
+          "file": "proxy.ts",
+          "line": 22
+        }
+      ],
+      "declaredIn": [],
+      "clientExposed": true,
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "PLAYWRIGHT",
+      "references": [
+        {
+          "file": "lib/constants.ts",
+          "line": 7
+        }
+      ],
+      "declaredIn": [],
+      "clientExposed": false,
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "PLAYWRIGHT_TEST_BASE_URL",
+      "references": [
+        {
+          "file": "lib/constants.ts",
+          "line": 6
+        }
+      ],
+      "declaredIn": [],
+      "clientExposed": false,
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "POSTGRES_URL",
+      "references": [
+        {
+          "file": "drizzle.config.ts",
+          "line": 10
+        },
+        {
+          "file": "lib/db/migrate.ts",
+          "line": 11
+        },
+        {
+          "file": "lib/db/migrate.ts",
+          "line": 16
+        },
+        {
+          "file": "lib/db/queries.ts",
+          "line": 36
+        }
+      ],
+      "declaredIn": [
+        ".env.example"
+      ],
+      "clientExposed": false,
+      "service": "Postgres",
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "REDIS_URL",
+      "references": [
+        {
+          "file": "app/(chat)/api/chat/route.ts",
+          "line": 407
+        },
+        {
+          "file": "lib/ratelimit.ts",
+          "line": 12
+        },
+        {
+          "file": "lib/ratelimit.ts",
+          "line": 13
+        }
+      ],
+      "declaredIn": [
+        ".env.example"
+      ],
+      "clientExposed": false,
+      "service": "Redis/KV",
+      "status": "UNVERIFIED"
+    }
+  ],
+  "omittedSystemEnvVars": [
+    "CI",
+    "NODE_ENV"
+  ],
+  "models": [
+    {
+      "provider": "moonshotai",
+      "modelId": "kimi-k2.5",
+      "rawExpression": "\"moonshotai/kimi-k2.5\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 1
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "moonshotai",
+      "modelId": "kimi-k2.5",
+      "rawExpression": "\"moonshotai/kimi-k2.5\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 6
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "deepseek",
+      "modelId": "deepseek-v3.2",
+      "rawExpression": "\"deepseek/deepseek-v3.2\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 30
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "moonshotai",
+      "modelId": "kimi-k2.5",
+      "rawExpression": "\"moonshotai/kimi-k2.5\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 37
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "openai",
+      "modelId": "gpt-oss-20b",
+      "rawExpression": "\"openai/gpt-oss-20b\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 44
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "openai",
+      "modelId": "gpt-oss-120b",
+      "rawExpression": "\"openai/gpt-oss-120b\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 52
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "xai",
+      "modelId": "grok-4.1-fast-non-reasoning",
+      "rawExpression": "\"xai/grok-4.1-fast-non-reasoning\"",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/models.ts",
+        "line": 60
+      },
+      "declaredOnly": true
+    },
+    {
+      "provider": "gateway",
+      "modelId": null,
+      "rawExpression": "modelId",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/providers.ts",
+        "line": 25
+      }
+    },
+    {
+      "provider": "moonshotai",
+      "modelId": "kimi-k2.5",
+      "rawExpression": "titleModel.id",
+      "callKind": "unknown",
+      "location": {
+        "file": "lib/ai/providers.ts",
+        "line": 32
+      }
+    }
+  ],
+  "crons": [],
+  "workflows": [],
+  "services": [
+    {
+      "service": "Auth.js",
+      "category": "auth",
+      "envVars": [
+        "AUTH_SECRET"
+      ],
+      "packages": [
+        "next-auth"
+      ]
+    },
+    {
+      "service": "Postgres",
+      "category": "database",
+      "envVars": [
+        "POSTGRES_URL"
+      ],
+      "packages": [
+        "drizzle-orm",
+        "postgres"
+      ]
+    },
+    {
+      "service": "Redis/KV",
+      "category": "database",
+      "envVars": [
+        "REDIS_URL"
+      ],
+      "packages": [
+        "redis"
+      ]
+    },
+    {
+      "service": "Vercel AI Gateway",
+      "category": "llm",
+      "envVars": [
+        "AI_GATEWAY_API_KEY"
+      ],
+      "packages": []
+    },
+    {
+      "service": "Vercel Blob",
+      "category": "storage",
+      "envVars": [
+        "BLOB_READ_WRITE_TOKEN"
+      ],
+      "packages": [
+        "@vercel/blob"
+      ]
+    }
+  ],
+  "ownership": [
+    {
+      "key": "git-repository",
+      "item": "Git repository github.com/vercel/ai-chatbot",
+      "owner": "unknown",
+      "action": "Transfer the repository to the client's organization or grant admin access."
+    },
+    {
+      "key": "service:Auth.js",
+      "item": "Auth.js credentials (AUTH_SECRET)",
+      "owner": "unknown",
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "key": "service:Postgres",
+      "item": "Postgres credentials (POSTGRES_URL)",
+      "owner": "unknown",
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "key": "service:Redis/KV",
+      "item": "Redis/KV credentials (REDIS_URL)",
+      "owner": "unknown",
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "key": "service:Vercel AI Gateway",
+      "item": "Vercel AI Gateway credentials (AI_GATEWAY_API_KEY)",
+      "owner": "unknown",
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "key": "service:Vercel Blob",
+      "item": "Vercel Blob credentials (BLOB_READ_WRITE_TOKEN)",
+      "owner": "unknown",
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    }
+  ],
+  "findings": [
+    {
+      "id": "env:AI_GATEWAY_API_KEY:unused-example",
+      "rule": "V6",
+      "subject": "AI_GATEWAY_API_KEY",
+      "category": "env",
+      "title": "Environment variable is declared in .env.example but not referenced",
+      "severity": "INFO",
+      "verification": "NOT_APPLICABLE",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Declared in .env.example."
+        }
+      ],
+      "action": "Confirm whether AI_GATEWAY_API_KEY is still required; remove stale example entries."
+    },
+    {
+      "id": "env:BLOB_READ_WRITE_TOKEN:unused-example",
+      "rule": "V6",
+      "subject": "BLOB_READ_WRITE_TOKEN",
+      "category": "env",
+      "title": "Environment variable is declared in .env.example but not referenced",
+      "severity": "INFO",
+      "verification": "NOT_APPLICABLE",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Declared in .env.example."
+        }
+      ],
+      "action": "Confirm whether BLOB_READ_WRITE_TOKEN is still required; remove stale example entries."
+    },
+    {
+      "id": "env:test-only:PORT",
+      "rule": null,
+      "subject": "PORT",
+      "category": "env",
+      "title": "Environment variable referenced only in tests",
+      "severity": "INFO",
+      "verification": "NOT_APPLICABLE",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Test-only reference",
+          "location": {
+            "file": "playwright.config.ts",
+            "line": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "model:deepseek/deepseek-v3.2:lib/ai/models.ts:30",
+      "rule": "V13",
+      "subject": "deepseek-v3.2",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model declaration at lib/ai/models.ts:30",
+          "location": {
+            "file": "lib/ai/models.ts",
+            "line": 30
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:dynamic:lib/ai/providers.ts:25",
+      "rule": null,
+      "subject": "lib/ai/providers.ts",
+      "category": "model",
+      "title": "Dynamic model ID; verify manually.",
+      "severity": "INFO",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model expression could not be resolved",
+          "location": {
+            "file": "lib/ai/providers.ts",
+            "line": 25
+          }
+        }
+      ],
+      "action": "Verify the model ID configured at this location."
+    },
+    {
+      "id": "model:gateway/dynamic:lib/ai/providers.ts:25",
+      "rule": "V14",
+      "subject": "<dynamic>",
+      "category": "model",
+      "title": "Dynamic model ID; verify manually",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model call at lib/ai/providers.ts:25",
+          "location": {
+            "file": "lib/ai/providers.ts",
+            "line": 25
+          }
+        }
+      ],
+      "action": "Resolve the model ID used at this call site."
+    },
+    {
+      "id": "model:moonshotai/kimi-k2.5:lib/ai/models.ts:1",
+      "rule": "V13",
+      "subject": "kimi-k2.5",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model declaration at lib/ai/models.ts:1",
+          "location": {
+            "file": "lib/ai/models.ts",
+            "line": 1
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:moonshotai/kimi-k2.5:lib/ai/models.ts:37",
+      "rule": "V13",
+      "subject": "kimi-k2.5",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model declaration at lib/ai/models.ts:37",
+          "location": {
+            "file": "lib/ai/models.ts",
+            "line": 37
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:moonshotai/kimi-k2.5:lib/ai/models.ts:6",
+      "rule": "V13",
+      "subject": "kimi-k2.5",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model declaration at lib/ai/models.ts:6",
+          "location": {
+            "file": "lib/ai/models.ts",
+            "line": 6
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:moonshotai/kimi-k2.5:lib/ai/providers.ts:32",
+      "rule": "V13",
+      "subject": "kimi-k2.5",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model call at lib/ai/providers.ts:32",
+          "location": {
+            "file": "lib/ai/providers.ts",
+            "line": 32
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "model:xai/grok-4.1-fast-non-reasoning:lib/ai/models.ts:60",
+      "rule": "V13",
+      "subject": "grok-4.1-fast-non-reasoning",
+      "category": "model",
+      "title": "Model ID not found in registry",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Model declaration at lib/ai/models.ts:60",
+          "location": {
+            "file": "lib/ai/models.ts",
+            "line": 60
+          }
+        }
+      ],
+      "action": "Confirm the model ID and lifecycle with the provider."
+    },
+    {
+      "id": "ownership:git-repository",
+      "rule": null,
+      "subject": "Git repository github.com/vercel/ai-chatbot",
+      "category": "ownership",
+      "title": "Ownership: Git repository github.com/vercel/ai-chatbot",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Transfer the repository to the client's organization or grant admin access."
+    },
+    {
+      "id": "ownership:service:Auth.js",
+      "rule": null,
+      "subject": "Auth.js credentials (AUTH_SECRET)",
+      "category": "ownership",
+      "title": "Ownership: Auth.js credentials (AUTH_SECRET)",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "id": "ownership:service:Postgres",
+      "rule": null,
+      "subject": "Postgres credentials (POSTGRES_URL)",
+      "category": "ownership",
+      "title": "Ownership: Postgres credentials (POSTGRES_URL)",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "id": "ownership:service:Redis/KV",
+      "rule": null,
+      "subject": "Redis/KV credentials (REDIS_URL)",
+      "category": "ownership",
+      "title": "Ownership: Redis/KV credentials (REDIS_URL)",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "id": "ownership:service:Vercel AI Gateway",
+      "rule": null,
+      "subject": "Vercel AI Gateway credentials (AI_GATEWAY_API_KEY)",
+      "category": "ownership",
+      "title": "Ownership: Vercel AI Gateway credentials (AI_GATEWAY_API_KEY)",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    },
+    {
+      "id": "ownership:service:Vercel Blob",
+      "rule": null,
+      "subject": "Vercel Blob credentials (BLOB_READ_WRITE_TOKEN)",
+      "category": "ownership",
+      "title": "Ownership: Vercel Blob credentials (BLOB_READ_WRITE_TOKEN)",
+      "severity": "MEDIUM",
+      "verification": "UNVERIFIED",
+      "evidence": [
+        {
+          "source": "repo",
+          "detail": "Owner: unknown."
+        }
+      ],
+      "action": "Confirm the account belongs to the client. After transfer, rotate the keys."
+    }
+  ],
+  "limits": [
+    "Actual spend not read; if the project uses Vercel AI Gateway, check its usage dashboard.",
+    "Live Vercel verification was not available."
+  ]
+}
